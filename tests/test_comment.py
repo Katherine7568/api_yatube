@@ -12,7 +12,7 @@ class TestCommentAPI:
         response = user_client.get(f'/api/v1/posts/{post.id}/comments/')
         assert response.status_code != HTTPStatus.NOT_FOUND, (
             'Страница `/api/v1/posts/{post.id}/comments/` не найдена, '
-            'проверьте этот адрес в *urls.py*.'
+            'проверьте этот адрес в '
         )
 
     def test_comments_get_unauth(self, client, post, comment_1_post):
@@ -166,7 +166,7 @@ class TestCommentAPI:
         )
         assert response.status_code != HTTPStatus.NOT_FOUND, (
             'Страница `/api/v1/posts/{post.id}/comments/{comment.id}/` '
-            'не найдена, проверьте этот адрес в *urls.py*.'
+            'не найдена, проверьте этот адрес '
         )
 
     def test_comments_id_unauth_get(self, client, post, comment_1_post):
@@ -186,7 +186,7 @@ class TestCommentAPI:
         )
         assert response.status_code == HTTPStatus.OK, (
             'Страница `/api/v1/posts/{post.id}/comments/{comment.id}/` не '
-            'найдена, проверьте этот адрес в *urls.py*.'
+            'найдена, проверьте этот адрес в '
         )
 
         test_data = response.json()

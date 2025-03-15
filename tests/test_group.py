@@ -13,7 +13,7 @@ class TestGroupAPI:
 
         assert response.status_code != HTTPStatus.NOT_FOUND, (
             'Страница `/api/v1/groups/` не найдена, проверьте этот адрес в '
-            '*urls.py*.'
+            ''
         )
 
     @pytest.mark.django_db(transaction=True)
@@ -84,7 +84,7 @@ class TestGroupAPI:
         response = user_client.get('/api/v1/posts/')
         assert response.status_code == HTTPStatus.OK, (
             'Страница `/api/v1/posts/` не найдена, проверьте этот адрес в '
-            '*urls.py*.'
+            ''
         )
 
         test_data = response.json()
@@ -98,7 +98,7 @@ class TestGroupAPI:
         response = client.get(f'/api/v1/groups/{group_1.id}/')
         assert response.status_code != 404, (
             'Страница `/api/v1/groups/{group_id}` не найдена, проверьте этот '
-            'адрес в *urls.py*.'
+            ''
         )
 
     @pytest.mark.django_db(transaction=True)

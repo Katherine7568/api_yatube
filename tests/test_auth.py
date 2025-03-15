@@ -10,7 +10,7 @@ class TestAuthAPI:
         )
         assert response.status_code != HTTPStatus.NOT_FOUND, (
             'Страница `/api/v1/api-token-auth/` не найдена, проверьте этот '
-            'адрес в *urls.py*.'
+            'адрес в '
         )
         assert response.status_code == HTTPStatus.OK, (
             'Проверьте, что POST-запрос к `/api/v1/api-token-auth/` '

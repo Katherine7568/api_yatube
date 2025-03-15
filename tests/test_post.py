@@ -13,7 +13,7 @@ class TestPostAPI:
 
         assert response.status_code != HTTPStatus.NOT_FOUND, (
             'Страница `/api/v1/posts/` не найдена, проверьте этот адрес в '
-            '*urls.py*.'
+            ''
         )
 
     def test_post_not_auth(self, client, post):
@@ -143,7 +143,6 @@ class TestPostAPI:
 
         assert response.status_code == HTTPStatus.OK, (
             'Страница `/api/v1/posts/{id}/` не найдена, проверьте этот адрес '
-            'в *urls.py*.'
         )
 
         test_data = response.json()
